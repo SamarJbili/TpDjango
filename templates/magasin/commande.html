@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %} 
+ <div class="col-md-12 text-center">
+ <h2>Manip Commande ...... </h2>
+ </div> 
+ <form method='POST' class="post-form">
+ {% csrf_token %}
+ {{ form1.as_p }}
+ <button type="sumit" class="btn btn-success">Enregistrer</button>
+</form> 
+
+{% for cmd in commandes  %}
+    {{ cmd.priceproduct }}
+    <td> {{cmd.totalcde}}</td>
+{% endfor %}
+<a href="{% url 'ListCmd' %}" class="btn btn-primary">Voir les commandes</a>
+
+{% endblock %}

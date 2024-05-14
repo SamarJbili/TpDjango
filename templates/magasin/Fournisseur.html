@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %} 
+ <div class="col-md-12 text-center">
+ <h2>Manip Fournisseur...... </h2>
+ </div> 
+ <form method='POST' class="post-form">
+ {% csrf_token %}
+ {{ form.as_p }}
+ <button type="sumit" class="btn btn-success">Enregistrer</button>
+ </form> 
+ <h2>Liste des fournisseurs</h2>
+<ul>
+    {% for fournisseur in liste_des_fournisseurs %}
+        <li>{{ fournisseur.nom }}</li> <!-- Assurez-vous d'adapter cela selon vos champs de modèle -->
+    {% endfor %}
+</ul>
+
+{% endblock %}

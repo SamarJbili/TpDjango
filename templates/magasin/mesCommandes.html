@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} Catalogue des commandes {% endblock %}
+{% block content %}
+<!-- body -->
+<div>
+    <h1 style="margin-left: 400px;">Catalogue des commandes</h1>
+    <table class="table table-striped">
+        <tr class="table-info">
+            <td class="table-info">Date de la commande</td>
+            <td class="table-info">Produit</td>
+        </tr>
+        {% for cmd in commandes %}
+        <tr class="table-primary">
+            <td class="table-primary">{{ cmd.dateCde }}</td>
+            <td class="table-primary">{{ cmd.allProducts }}</td>       
+        </tr>
+        {% endfor %}
+    </table>
+    <h1 class="table-info">Total de la commande</h1>
+    <h4 class="table-primary">{{ total_commandes }}</h4>
+
+</div>
+{% endblock %}
